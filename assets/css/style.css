@@ -1,0 +1,661 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+}
+.main > .nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav > * {
+  height: 100%;
+}
+.nav > figure {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav > figure > img {
+  width: 220px;
+  height: 150px;
+}
+.nav > ul {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.nav > ul > li {
+  margin: 0 5px;
+  position: relative;
+}
+.nav > ul > li::after {
+  content: " ";
+  width: 0;
+  height: 2px;
+  background-color: rgb(243, 219, 0);
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transition: 0.5s;
+}
+.nav > ul > li:hover::after {
+  width: 100%;
+  left: 0;
+}
+.nav > ul > li > a {
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: serif;
+  color: black;
+  padding: 0 10px;
+  transition: 0.5s;
+}
+.nav > ul > li > a:hover {
+  color: rgb(243, 219, 0);
+}
+.nav > .register {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav > .register > a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: serif;
+  color: rgb(8, 8, 8);
+  text-transform: capitalize;
+  border-radius: 10px;
+  padding: 12px 23px;
+
+  transition: 0.5s;
+}
+.nav > .register > a:hover {
+  outline: 1px solid rgb(243, 219, 0);
+  color: rgb(243, 219, 0);
+}
+.main > .wall {
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  background-image: url('../img/wall.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 -1100px rgba(128, 128, 128, 0.448);
+}
+.wall > * {
+  color: white;
+}
+.wall > .txtwall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 400px;
+}
+.wall > .txtwall > h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-family: serif;
+}
+.wall > .txtwall > p {
+  text-align: justify;
+  text-align-last: center;
+  font-size: 30px;
+  text-transform: capitalize;
+  font-family: serif;
+}
+.wall > .txtwall > .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+}
+.wall > .txtwall > .link > a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 15px;
+  margin: 0 15px;
+  border: 3px solid white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.wall > .txtwall > .link > a:first-of-type {
+  background-color: #9b8a60;
+}
+.wall > .txtwall > .link > a:first-of-type:hover {
+  background-color: #807152;
+}
+.wall > .txtwall > .link > a:last-of-type:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+.wall > .txtwall > h4 {
+  align-self: flex-end;
+  font-size: 25px;
+  text-transform: capitalize;
+  font-family: serif;
+}
+.wall > .txtwall > h4 > a {
+  color: white;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  margin-left: 8px;
+  transition: 0.5s;
+}
+.wall > .txtwall > h4 > a:hover {
+  color: rgb(243, 219, 0);
+}
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 200px 0;
+}
+.cards > .card-title {
+  width: 1100px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.cards > .card-title > h2 {
+  font-size: 60px;
+  text-transform: capitalize;
+  font-family: serif;
+}
+.cards > .card-title > p {
+  font-size: 25px;
+  text-transform: capitalize;
+  font-family: serif;
+  color: black;
+}
+.cards > .card-galleri {
+  width: 1500px;
+  /* height: 1200px; */
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cards > .card-galleri > figure {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.cards > .card-galleri > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.cards > .card-galleri > figure > figcaption {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  color: white;
+  left: 0;
+  bottom: -50px;
+  text-align: center;
+  transition: 0.5s;
+}
+.cards > .card-galleri > figure > figcaption > h3,
+h4 {
+  font-size: 30px;
+  text-transform: capitalize;
+  font-family: serif;
+  line-height: 1.25;
+}
+.cards > .card-galleri > figure:hover > figcaption {
+  bottom: 40px;
+}
+.cards > .card-galleri > figure:hover {
+  box-shadow: 3px 3px 8px black, -3px -3px 8px black;
+}
+.cards > .card-galleri > figure:hover > img {
+  width: 107%;
+  height: 107%;
+}
+.card-titel2 {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-titel2 > h4 {
+  font-style: italic;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  text-transform: capitalize;
+  font-family: serif;
+}
+.card-titel2 > h4 > a {
+  font-style: italic;
+  color: black;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  text-decoration: none;
+  margin-left: 8px;
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+}
+.card-titel2 > h4 > a:hover {
+  border-bottom-color: rgba(149, 149, 45, 0.577);
+  color: rgba(143, 143, 57, 0.488);
+}
+.card-titel2 > a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+  padding: 15px;
+  margin: 0 15px;
+  border: 3px solid white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  background-color: #9b8a60;
+}
+.card-titel2 > a:hover {
+  background-color: #807152;
+}
+.main2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #807152;
+}
+.main2 > .title2 {
+  width: 900px;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0;
+}
+.main2 > .title2 > h2,
+p {
+  width: 100%;
+  margin: 15px 0;
+  font-size: 30px;
+  font-family: serif;
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+}
+.main2 > .galleri2 {
+  width: 1500px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 90px;
+}
+.main2 > .galleri2 > figure {
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: 2px 2px 8px whitesmoke, -2px -2px 8px whitesmoke;
+}
+.main2 > .galleri2 > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  filter: grayscale(1);
+}
+.main2 > .galleri2 > figure > figcaption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 100%;
+  top: 41%;
+  background-color: #9b8a6000;
+  transition: 0.8s;
+  color: aliceblue;
+  font-size: 30px;
+}
+.main2 > .galleri2 > figure:hover > figcaption {
+  left: 0;
+}
+.main2 > .galleri2 > figure:hover > img {
+  width: 110%;
+  height: 110%;
+  filter: none;
+}
+.main2 > .galleri2 > figure:hover {
+  box-shadow: 2px 2px 8px rgb(204, 207, 12), -2px -2px 8px rgb(229, 225, 15);
+}
+.main2 > h4 {
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  text-transform: capitalize;
+  font-family: serif;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+.main2 > h4 > a {
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+  font-family: sans-serif;
+  text-decoration: none;
+  margin-left: 8px;
+  border-bottom: 1px solid black;
+  transition: 0.5s;
+}
+.main2 > h4 > a:hover {
+  border-bottom-color: yellow;
+}
+section {
+  width: 100%;
+  margin: 130px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+section > h3 {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  margin-bottom: 60px;
+}
+section > .galleri3 {
+  width: 1500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+section > .galleri3 > .cards-galleri {
+  width: 400px;
+  height: 775px;
+  margin: 8px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  box-shadow: 4px 4px 15px grey, -4px -4px 15px rgb(5, 5, 5);
+  border-radius: 10px;
+}
+section > .galleri3 > .cards-galleri > .card-img {
+  width: 100%;
+  height: 501px;
+  overflow: hidden;
+  border-radius: 2px 2px 10px 10px;
+  margin-top: -17px;
+}
+section > .galleri3 > .cards-galleri > .card-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section > .galleri3 > .cards-galleri > .cards-box {
+  width: 65%;
+  height: 110px;
+  background-color: #cdad6c;
+  position: absolute;
+  top: 441px;
+  left: 18%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+section > .galleri3 > .cards-galleri > .cards-box > h2 {
+  color: white;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: serif;
+  font-size: 20px;
+}
+.galleri3 > .cards-galleri > .card-text {
+  width: 100%;
+  height: 190px;
+  color: black;
+  margin-bottom: 33px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.galleri3 > .cards-galleri > .card-text > p {
+  color: black;
+  font-size: 25px;
+  text-align: justify;
+  text-align-last: center;
+}
+.galleri3 > .cards-galleri > .card-text > a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+  transition: 0.5s;
+}
+.galleri3 > .cards-galleri > .card-text > a::after {
+  content: " ";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: black;
+  bottom: -8px;
+  left: 0;
+  transition: 0.5s;
+}
+.galleri3 > .cards-galleri > .card-text > a:hover {
+  color: #cdad6c;
+}
+.galleri3 > .cards-galleri > .card-text > a:hover::after {
+  background-color: #cdad6c;
+}
+.foot-wall {
+  width: 100%;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url('../img/t5.jpg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.foot-contact {
+  width: 1200px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.foot-wall > .foot-contact > .contact,
+.form-contact {
+  /* height: 700px; */
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px wheat, -3px -3px 8px wheat;
+}
+.contact > * {
+  color: whitesmoke;
+  font-family: serif;
+}
+.foot-wall > .foot-contact > .contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  padding: 20px;
+}
+.foot-wall > .foot-contact > .contact > h3 {
+  width: 100%;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.foot-wall > .foot-contact > .contact > p {
+  width: 100%;
+  text-align: justify;
+  font-size: 18px;
+  text-align-last: center;
+}
+.foot-wall > .foot-contact > .contact > a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  border: 1px solid white;
+  width: 40%;
+  padding: 15px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.foot-wall > .foot-contact > .contact > h4 {
+  width: 100%;
+  font-size: 18px;
+}
+.foot-wall > .foot-contact > .contact > h4 > a {
+  color: white;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+.foot-wall > .foot-contact > .contact > h4 > a:hover {
+  color: #cdad6c;
+}
+.foot-wall > .foot-contact > .contact > a:hover {
+  background-color: white;
+  color: black;
+}
+.foot-wall > .foot-contact > .form-contact {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 20px;
+}
+.foot-contact > .form-contact > form > label {
+  color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-family: serif;
+}
+.foot-contact > .form-contact > form > input,
+textarea {
+  width: 100%;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+.foot-contact > .form-contact > form > input:focus{
+  outline: 1px solid gray;
+  box-shadow: 0 2px 5px white,0 -2px 5px white;
+}
+.foot-contact > .form-contact > form > button {
+  width: 50%;
+  display: block;
+  margin:5px auto;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.foot-contact > .form-contact > form > button:hover {
+  background-color: rgb(128, 130, 125);
+  color: white;
+}
+input,
+textarea::placeholder {
+  font-size: 15px;
+}
+.foot-contact > .form-contact > form > label {
+  text-align: center;
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color:rgb(128, 113, 82);
+}
+footer>img , h4 , h6{
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+footer>img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
